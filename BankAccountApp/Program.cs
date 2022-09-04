@@ -6,7 +6,7 @@ namespace BankAccountApp
     {
         static void Main(string[] args)
         {
-            decimal balance = 0;
+            decimal balance = 0; //Think about putting this in the BankAccount class
             ConsoleLogging.MainMenu(balance);
         }
 

@@ -9,6 +9,13 @@ namespace BankAccountApp
 {
     internal class BankAccount
     {
+        //Think about removing Console.WriteLine() from the methods. Having one line in the Main() is cool but not always appropriate.
+        //Try to not pass dialog in these methods below. 
+
+        //Both of your methods (Deposit and Withdraw) are taking a balance as an argument through the params,
+        //Ideally, balance would belong to the BankAccount class.
+        //The method should probably take an amount to deposit/withdraw through the params instead.
+
         public static void GetBalance(decimal balance)
         {
             Console.WriteLine($"Your balance is: {balance,0:c}");
@@ -19,6 +26,7 @@ namespace BankAccountApp
 
             var userInput = decimal.Parse(Console.ReadLine());
 
+            //Think about making this a method in the ConsoleLogging class you could call it Loading() or something like that. Pretty neat though!
             for (int i = 0; i < 20; i++)
             {
                 Console.Write("| -");
