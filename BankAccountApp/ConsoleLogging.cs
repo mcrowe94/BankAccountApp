@@ -42,6 +42,8 @@ namespace BankAccountApp
                     Environment.Exit(0);
                 }
 
+                //The if else is not bad here but think about using a switch statement to make it a bit cleaner
+
                 Console.WriteLine("Press ENTER to return to MENU...");
                 Console.ReadLine();
                 Console.Clear();
