@@ -22,6 +22,8 @@ namespace BankAccountApp
         }
         public static decimal GetDeposit(decimal balance)
         {
+            //I was able to deposit -$100. Maybe think of a way to handle not depositing negative numbers
+
             Console.WriteLine("How much would you like to desposit?");
 
             var userInput = decimal.Parse(Console.ReadLine());
