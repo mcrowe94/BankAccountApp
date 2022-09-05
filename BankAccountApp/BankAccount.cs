@@ -29,22 +29,7 @@ namespace BankAccountApp
             var userInput = decimal.Parse(Console.ReadLine());
 
             //Think about making this a method in the ConsoleLogging class you could call it Loading() or something like that. Pretty neat though!
-            for (int i = 0; i < 20; i++)
-            {
-                Console.Write("| -");
-                Thread.Sleep(50);
-                Console.Write("\b\b\b");
-                Console.Write("/ \\");
-                Thread.Sleep(50);
-                Console.Write("\b\b\b");
-                Console.Write("- |");
-                Thread.Sleep(50);
-                Console.Write("\b\b\b");
-                Console.Write("\\ /");
-                Thread.Sleep(50);
-                Console.Write("\b\b\b");
-            }
-
+            ConsoleLogging.Loading();
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("SUCCESS!!");
             Console.ResetColor();

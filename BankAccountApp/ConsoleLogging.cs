@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace BankAccountApp
@@ -40,36 +41,58 @@ namespace BankAccountApp
                     default:
                         break;
                 }
-                //if (userInput == "1")
-                //{
-                //    BankAccount.GetBalance(balance);
-                //}
-
-                //else if (userInput == "2")
-                //{
-                //    balance = BankAccount.GetDeposit(balance);
-                //}
-
-                //else if (userInput == "3")
-                //{
-                //    balance = BankAccount.GetWithdraw(balance);
-                //}
-
-                //else if (userInput == "4")
-                //{
-                //    Console.Clear();
-                //    Console.ForegroundColor = ConsoleColor.Yellow;
-                //    Console.WriteLine("Thank you, have a nice day!");
-                //    Console.ResetColor();
-                //    Environment.Exit(0);
-                //}
-
-                //The if else is not bad here but think about using a switch statement to make it a bit cleaner
-
+                
                 Console.WriteLine("Press ENTER to return to MENU...");
                 Console.ReadLine();
                 Console.Clear();
             }
         }
+
+        public static void Loading()
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                Console.Write("| -");
+                Thread.Sleep(50);
+                Console.Write("\b\b\b");
+                Console.Write("/ \\");
+                Thread.Sleep(50);
+                Console.Write("\b\b\b");
+                Console.Write("- |");
+                Thread.Sleep(50);
+                Console.Write("\b\b\b");
+                Console.Write("\\ /");
+                Thread.Sleep(50);
+                Console.Write("\b\b\b");
+            }
+        }
     }
 }
+
+#region DEPRICIATED CODE
+//if (userInput == "1")
+//{
+//    BankAccount.GetBalance(balance);
+//}
+
+//else if (userInput == "2")
+//{
+//    balance = BankAccount.GetDeposit(balance);
+//}
+
+//else if (userInput == "3")
+//{
+//    balance = BankAccount.GetWithdraw(balance);
+//}
+
+//else if (userInput == "4")
+//{
+//    Console.Clear();
+//    Console.ForegroundColor = ConsoleColor.Yellow;
+//    Console.WriteLine("Thank you, have a nice day!");
+//    Console.ResetColor();
+//    Environment.Exit(0);
+//}
+
+//The if else is not bad here but think about using a switch statement to make it a bit cleaner
+#endregion
