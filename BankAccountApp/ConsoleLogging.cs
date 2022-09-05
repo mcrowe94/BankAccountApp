@@ -18,29 +18,51 @@ namespace BankAccountApp
                 Console.WriteLine("1. CHECK ACCOUNT BALANCE \n2. MAKE A DEPOSIT \n3. MAKE A WITHDRAW \n4. EXIT MENU\n");
 
                 var userInput = Console.ReadLine();
-                if (userInput == "1")
-                {
-                    BankAccount.GetBalance(balance);
-                }
 
-                else if (userInput == "2")
+                switch (userInput)
                 {
-                    balance = BankAccount.GetDeposit(balance);
+                    case "1":
+                        BankAccount.GetBalance(balance);
+                        break;
+                    case "2":
+                        balance = BankAccount.GetDeposit(balance);
+                        break;
+                    case "3":
+                        balance = BankAccount.GetWithdraw(balance);
+                        break;
+                    case "4":
+                        Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Thank you, have a nice day!");
+                        Console.ResetColor();
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        break;
                 }
+                //if (userInput == "1")
+                //{
+                //    BankAccount.GetBalance(balance);
+                //}
 
-                else if (userInput == "3")
-                {
-                    balance = BankAccount.GetWithdraw(balance);
-                }
+                //else if (userInput == "2")
+                //{
+                //    balance = BankAccount.GetDeposit(balance);
+                //}
 
-                else if (userInput == "4")
-                {
-                    Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Thank you, have a nice day!");
-                    Console.ResetColor();
-                    Environment.Exit(0);
-                }
+                //else if (userInput == "3")
+                //{
+                //    balance = BankAccount.GetWithdraw(balance);
+                //}
+
+                //else if (userInput == "4")
+                //{
+                //    Console.Clear();
+                //    Console.ForegroundColor = ConsoleColor.Yellow;
+                //    Console.WriteLine("Thank you, have a nice day!");
+                //    Console.ResetColor();
+                //    Environment.Exit(0);
+                //}
 
                 //The if else is not bad here but think about using a switch statement to make it a bit cleaner
 
