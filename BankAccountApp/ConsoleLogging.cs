@@ -9,7 +9,7 @@ namespace BankAccountApp
 {
     public class ConsoleLogging
     {
-        public static void MainMenu(decimal balance)
+        public static void MainMenu(BankAccount account)
         {
             while (true)
             {
@@ -23,13 +23,18 @@ namespace BankAccountApp
                 switch (userInput)
                 {
                     case "1":
-                        BankAccount.GetBalance(balance);
+                        var balance = account.GetBalance();
+                        Console.WriteLine($"Your balance is: {balance,0:c}");
                         break;
                     case "2":
-                        balance = BankAccount.GetDeposit(balance);
+                        Console.WriteLine("How much would you like to deposit?");
+                        var deposit = decimal.Parse(Console.ReadLine());
+                        account.Deposit(deposit);
                         break;
                     case "3":
-                        balance = BankAccount.GetWithdraw(balance);
+                        Console.WriteLine("How much would you like to withdraw?");
+                        var withdraw = decimal.Parse(Console.ReadLine());
+                        account.GetWithdraw(withdraw);
                         break;
                     case "4":
                         Console.Clear();
